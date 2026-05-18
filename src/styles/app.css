@@ -1,0 +1,298 @@
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#3b3b3b;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+/* APP */
+
+.app{
+  padding:20px;
+  width:100%;
+  overflow-x:hidden;
+}
+
+h1{
+  margin-bottom:20px;
+  font-size:32px;
+}
+
+/* TOP SECTION */
+
+.top-section{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.card{
+  background:#626262;
+  padding:30px;
+  border-radius:15px;
+  flex:1 1 300px;
+  width:100%;
+  max-width:100%;
+  text-align:center;
+}
+
+.card h2{
+  margin-bottom:20px;
+  line-height:1.5;
+}
+
+.card button{
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.income-btn{
+  background:green;
+}
+
+.expense-btn{
+  background:#ff6b6b;
+}
+
+.card button:hover{
+  opacity:0.9;
+}
+
+/* CHARTS */
+
+.charts-section{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.chart-box{
+  background:white;
+  color:black;
+  flex:1 1 400px;
+  width:100%;
+  max-width:100%;
+  padding:20px;
+  border-radius:12px;
+}
+
+.chart-box h2{
+  margin-bottom:20px;
+}
+
+/* EXPENSE LIST */
+
+.expense-list{
+  background:white;
+  color:black;
+  padding:20px;
+  border-radius:12px;
+}
+
+.expense-list h2{
+  margin-bottom:20px;
+}
+
+.expense-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+  border-bottom:1px solid #ccc;
+}
+
+.expense-item p{
+  color:gray;
+  margin-top:5px;
+}
+
+.expense-actions{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+/* BUTTONS */
+
+.delete-btn{
+  background:red;
+  color:white;
+  border:none;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.edit-btn{
+  background:orange;
+  color:white;
+  border:none;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.delete-btn:hover,
+.edit-btn:hover{
+  opacity:0.8;
+}
+
+/* MODAL */
+
+.overlay{
+  background:rgba(0,0,0,0.7);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:1000;
+}
+
+.modal{
+  background:white;
+  width:400px;
+  max-width:95%;
+  padding:30px;
+  border-radius:12px;
+  margin:80px auto;
+  color:black;
+}
+
+.expense-form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-top:20px;
+}
+
+.expense-form input,
+.expense-form select{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:16px;
+}
+
+.modal-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.modal-buttons button{
+  flex:1;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#626262;
+  color:white;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width:768px){
+
+  .app{
+    padding:10px;
+  }
+
+  h1{
+    font-size:26px;
+    text-align:center;
+  }
+
+  /* TOP SECTION */
+
+  .top-section{
+    flex-direction:column;
+  }
+
+  .card{
+    width:100%;
+    min-width:100%;
+    padding:20px;
+  }
+
+  .card h2{
+    font-size:20px;
+  }
+
+  .card button{
+    width:100%;
+  }
+
+  /* CHARTS */
+
+  .charts-section{
+    flex-direction:column;
+  }
+
+  .chart-box{
+    width:100%;
+    min-width:100%;
+    overflow-x:auto;
+  }
+
+  /* EXPENSE LIST */
+
+  .expense-list{
+    padding:15px;
+  }
+
+  .expense-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+
+  .expense-actions{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  /* MODAL */
+
+  .modal{
+    width:95%;
+    margin:50px auto;
+    padding:20px;
+  }
+
+  .modal-buttons{
+    flex-direction:column;
+  }
+
+  .modal-buttons button{
+    width:100%;
+  }
+}
+img,
+svg,
+canvas{
+  max-width:100%;
+}
+
+/* Prevent overflow */
+
+body,
+html{
+  overflow-x:hidden;
+}
