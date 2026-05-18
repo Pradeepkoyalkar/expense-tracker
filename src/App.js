@@ -376,14 +376,13 @@ function App() {
             }
             className="income-input"
           />
-
           <button
-            type="submit"
-            className="income-btn"
-            onClick={addIncome}
-          >
-            + Add Income
-          </button>
+             type="submit"
+               className="income-btn"
+               onClick={addIncome}
+                >
+              Add Balance + Add Income
+            </button>
 
         </div>
 
