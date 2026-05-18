@@ -133,7 +133,7 @@ function App() {
     setIsOpen(false);
   };
 
-  // ADD OR UPDATE EXPENSE
+  // ADD / UPDATE EXPENSE
   const handleAddExpense = (e) => {
 
     e.preventDefault();
@@ -378,6 +378,7 @@ function App() {
           />
 
           <button
+            type="submit"
             className="income-btn"
             onClick={addIncome}
           >
@@ -620,11 +621,11 @@ function App() {
             }
           />
 
-          {/* AMOUNT */}
+          {/* PRICE */}
 
           <input
             type="number"
-            name="amount"
+            name="price"
             placeholder="Amount"
             value={amount}
             onChange={(e) =>
@@ -681,7 +682,10 @@ function App() {
 
           <div className="modal-buttons">
 
-            <button type="submit">
+            <button
+              type="submit"
+              className="submit-btn"
+            >
 
               {
                 editId
