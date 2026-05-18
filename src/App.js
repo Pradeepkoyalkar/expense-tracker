@@ -35,7 +35,7 @@ function App() {
   const [walletBalance, setWalletBalance] =
     useState(5000);
 
-  // INCOME INPUT
+  // INCOME
   const [income, setIncome] =
     useState("");
 
@@ -362,9 +362,12 @@ function App() {
             ₹{walletBalance}
           </h2>
 
+          {/* INCOME INPUT */}
+
           <input
             type="number"
-            placeholder="Add Income"
+            name="income"
+            placeholder="Income Amount"
             value={income}
             onChange={(e) =>
               setIncome(
@@ -607,6 +610,7 @@ function App() {
 
           <input
             type="text"
+            name="title"
             placeholder="Title"
             value={title}
             onChange={(e) =>
@@ -620,6 +624,7 @@ function App() {
 
           <input
             type="number"
+            name="amount"
             placeholder="Amount"
             value={amount}
             onChange={(e) =>
@@ -632,6 +637,7 @@ function App() {
           {/* CATEGORY */}
 
           <select
+            name="category"
             value={category}
             onChange={(e) =>
               setCategory(
@@ -662,6 +668,7 @@ function App() {
 
           <input
             type="date"
+            name="date"
             value={date}
             onChange={(e) =>
               setDate(
