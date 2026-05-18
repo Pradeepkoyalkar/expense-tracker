@@ -35,6 +35,10 @@ function App() {
   const [walletBalance, setWalletBalance] =
     useState(5000);
 
+  // INCOME INPUT
+  const [income, setIncome] =
+    useState("");
+
   // EXPENSES
   const [expenses, setExpenses] =
     useState([]);
@@ -66,16 +70,14 @@ function App() {
     const savedExpenses =
       JSON.parse(
         localStorage.getItem("expenses")
-      );
+      ) || [];
 
     const savedWallet =
       localStorage.getItem(
         "walletBalance"
       );
 
-    if (savedExpenses) {
-      setExpenses(savedExpenses);
-    }
+    setExpenses(savedExpenses);
 
     if (savedWallet) {
       setWalletBalance(
@@ -103,10 +105,6 @@ function App() {
   // ADD INCOME
   const addIncome = () => {
 
-    const income = prompt(
-      "Enter income amount"
-    );
-
     if (!income || income <= 0) {
       return;
     }
@@ -114,6 +112,8 @@ function App() {
     setWalletBalance(
       walletBalance + Number(income)
     );
+
+    setIncome("");
   };
 
   // OPEN MODAL
@@ -333,7 +333,7 @@ function App() {
 
   ];
 
-  // PIE COLORS
+  // CHART COLORS
   const COLORS = [
     "#A000FF",
     "#FF9300",
@@ -344,7 +344,9 @@ function App() {
 
     <div className="app">
 
-      <h1>Expense Tracker</h1>
+      <h1>
+        Expense Tracker
+      </h1>
 
       {/* TOP SECTION */}
 
@@ -359,6 +361,18 @@ function App() {
             <br />
             ₹{walletBalance}
           </h2>
+
+          <input
+            type="number"
+            placeholder="Add Income"
+            value={income}
+            onChange={(e) =>
+              setIncome(
+                e.target.value
+              )
+            }
+            className="income-input"
+          />
 
           <button
             className="income-btn"
@@ -381,7 +395,9 @@ function App() {
 
           <button
             className="expense-btn"
-            onClick={openExpenseModal}
+            onClick={
+              openExpenseModal
+            }
           >
             + Add Expense
           </button>
